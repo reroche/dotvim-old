@@ -43,7 +43,22 @@ set pastetoggle=<F3> " Use shortcut to toggle PASTE mode
 set signcolumn=yes " Add a column to the left of numbers for 'signs'
 
 " Vim Colorscheme
-colorscheme seoul256
+" colorscheme seoul256
+
+" IMPORTANT: Uncomment one of the following lines to force
+" using 256 colors (or 88 colors) if your terminal supports it,
+" but does not automatically use 256 colors by default.
+if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+  \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+  " Use the guicolorscheme plugin to makes 256-color or 88-color
+  " terminal use GUI colors rather than cterm colors.
+  runtime! plugin/guicolorscheme.vim
+  GuiColorScheme rastafari
+else
+  " For 8-color 16-color terminals or for gvim, just use the
+  " regular :colorscheme command.
+  colorscheme rastafari
+endif
 
 " Strip whitespace from end of lines when writing file
 autocmd BufWritePre * :%s/\s\+$//e
@@ -105,6 +120,8 @@ let g:airline_theme='powerlineish'
 " set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline
 " let g:airline_section_x = '%{PencilMode()}'
 let g:airline#extensions#tmuxline#enabled = 0
+
+"-------------- tmuxline -----------------------
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : '#(~/dotfiles/battery_indicator.sh)',
@@ -114,79 +131,3 @@ let g:tmuxline_preset = {
       \'x'    : '#(osascript ~/dotfiles/tunes.scpt)',
       \'y'    : '%R',
       \'z'    : '#h'}
-
-
-" Vim Lightline
-" Settings assume patched font is installed.
-" let g:lightline = {
-"       \ 'colorscheme': 'powerline',
-"       \ 'mode_map': { 'c': 'NORMAL' },
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste'], [ 'fugitive', 'filename' ] ]
-"       \ },
-"       \ 'component_function': {
-"       \   'modified': 'LightlineModified',
-"       \   'readonly': 'LightlineReadonly',
-"       \   'fugitive': 'LightlineFugitive',
-"       \   'filename': 'LightlineFilename',
-"       \   'fileformat': 'LightlineFileformat',
-"       \   'filetype': 'LightlineFiletype',
-"       \   'fileencoding': 'LightlineFileencoding',
-"       \   'mode': 'LightlineMode',
-"       \ },
-"       \ 'separator': { 'left': '', 'right': '' },
-"       \ 'subseparator': { 'left': '', 'right': '' }
-"       \ }
-"
-" function! LightlineModified()
-"   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-" endfunction
-"
-" function! LightlineReadonly()
-"   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
-"  endfunction
-"
-" function! LightlineFilename()
-"   return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-"      \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-"      \  &ft == 'unite' ? unite#get_status_string() :
-"      \  &ft == 'vimshell' ? vimshell#get_status_string() :
-"      \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-"      \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
-" endfunction
-"
-" function! LightlineFugitive()
-"   if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-"      let branch = fugitive#head()
-"      return branch !=# '' ? ' '.branch : ''
-"    endif
-"    return ''
-" endfunction
-"
-" function! LightlineFileformat()
-"       return winwidth(0) > 70 ? &fileformat : ''
-" endfunction
-"
-" function! LightlineFiletype()
-"   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-" endfunction
-"
-" function! LightlineFileencoding()
-"   return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
-" endfunction
-"
-" function! LightlineMode()
-"   return winwidth(0) > 60 ? lightline#mode() : ''
-" endfunction
-
-" NOTE: Use these settings if the patched font is not installed, i.e. when using ssh
-"let g:lightline = {
-"      \ 'colorscheme': 'wombat',
-"      \ 'component': {
-"      \   'readonly': '%{&readonly?"x":""}',
-"      \ },
-"      \ 'separator': { 'left': '', 'right': '' },
-"      \ 'subseparator': { 'left': '|', 'right': '|' }
-"      \ }
-
-

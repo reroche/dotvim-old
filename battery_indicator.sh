@@ -1,11 +1,11 @@
 #!/bin/bash
 
 charging=$(acpi | cut -c 12-19)
-percentage=$(acpi|cut -d " " -f 4|cut -c -3)
+percentage=$(acpi| grep -oP "(\d+(\.\d+)?(?=%))")
 
 if [ "$charging" == "Charging" ]
 then
-  echo "⚡$percentage"
+  echo "⚡$percentage%"
 else
-  echo $percentage
+  echo "$percentage%"
 fi

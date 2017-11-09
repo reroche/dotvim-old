@@ -34,3 +34,6 @@
 [submodule "markdown-preview"]
 	path = markdown-preview
 	url = https://github.com/reroche/vim-markdown-preview
+[submodule "bundle/bundle/vim-markdown-preview"]
+	path = bundle/bundle/vim-markdown-preview
+	url = https://github.com/reroche/vim-markdown-preview

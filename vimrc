@@ -87,6 +87,7 @@ let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
 " disable the <tab> mapping provided by vimwiki, which interferes with SuperTab
 let g:vimwiki_table_mappings = 0
+let g:vimwiki_global_ext = 0
 
 " Markdown preview
 let vim_markdown_preview_pandoc=1

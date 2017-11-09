@@ -60,7 +60,6 @@ autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
 "--------------- Key Mapping -----------------------
 vnoremap jk <esc>
 inoremap jk <esc>
-map jk <esc>
 nnoremap fd :w!<CR>
 let mapleader=','
 nnoremap <leader>sv :source $MYVIMRC<CR>

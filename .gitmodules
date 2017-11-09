@@ -28,3 +28,6 @@
 [submodule "bundle/commentary"]
 	path = bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "bundle/markdown-preview"]
+	path = bundle/markdown-preview
+	url = https://github.com/JamshedVesuna/vim-markdown-preview

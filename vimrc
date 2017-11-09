@@ -50,6 +50,10 @@ set cursorline
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufRead,BufNewFile *.md setlocal tw=150  spell colorcolumn=150
 
+set omnifunc=syntaxcomplete#Complete
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red
+
 "------------ C Language Settings -------------------------
 autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
@@ -77,14 +81,16 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "--------------- Vimwiki --------------------------
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.mdown': 'markdown'}
-let g:vimwiki_list = [{'path': '$HOME/Documents/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md': '.markdown', '.mdown': 'markdown'}
+let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_dir_link = 'index'
 let g:vimwiki_hl_headers = 1
-let g:vimwiki_table_mappings = 0
 let g:vimwiki_hl_cb_checked = 1
 " disable the <tab> mapping provided by vimwiki, which interferes with SuperTab
 let g:vimwiki_table_mappings = 0
+
+" Markdown preview
+let vim_markdown_preview_pandoc=1
 
 
 "-------------- Syntastic -------------------------

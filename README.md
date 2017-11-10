@@ -21,6 +21,7 @@
 - [vim-colorschemes](https://github.com/flazz/vim-colorschemes)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-markdown-preview](https://github.com/reroche/vim-markdown-preview)
 - [vim-surround](https://github.com/tpope/vim-surround)
 - [vimwiki](https://github.com/vimwiki/vimwiki)
 
@@ -28,5 +29,3 @@
 - I use the GNOME Terminal, with TMUX.
 - The font I use can be found here: [Powerline Fonts](https://github.com/powerline/fonts)
 - The color scheme shown in the images is Freya.
-
-

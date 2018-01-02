@@ -9,7 +9,7 @@ set t_Co=256 "256 color
 set nocompatible  "Kill vi-compatibility
 set encoding=utf-8 "UTF-8 character encoding
 scriptencoding utf-8
-colorscheme smyck
+colorscheme seoul256
 
 " General Settings
 set background=dark

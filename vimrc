@@ -142,3 +142,7 @@ let g:tmuxline_preset = {
 "--------------- YouCompleteMe ------------------
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
+
+"---------------- Vimux -------------------------
+map <leader>g :call VimuxRunCommand("clear; g++ " . expand('%:t') . " && ./a.out")<CR>
+map <leader>gg :call VimuxRunLastCommand()<CR>

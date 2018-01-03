@@ -1,5 +1,8 @@
 "------------------ RER's vimrc ---------------------
 
+let g:username = "RE Roche"
+let g:email = "rers97@gmail.com"
+
 " Pathogen Configuration
 execute pathogen#infect()
 syntax on
@@ -63,11 +66,11 @@ inoremap jk <esc>
 nnoremap fd :w!<CR>
 let mapleader=','
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <leader>ss :w!<CR>
 nnoremap <leader>q :q<CR>
 nnoremap U <C-r>
 nnoremap <F5> :r !date
 nnoremap <Space> i*<Esc>r
+nnoremap <leader>s :SyntasticToggleMode<CR>
 
 "-------------- NERDTree -------------------------
 nnoremap <leader>t :NERDTreeToggle<CR>
@@ -135,3 +138,7 @@ let g:tmuxline_preset = {
       \'y'    : '#(~/.vim/battery_indicator.sh)',
       \'x'    : '#(~/.vim/spotify.sh)',
       \'z'    : '#h'}
+
+"--------------- YouCompleteMe ------------------
+let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_server_python_interpreter = '/usr/bin/python2'

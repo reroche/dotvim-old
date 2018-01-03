@@ -40,3 +40,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "bundle/vim-template"]
+	path = bundle/vim-template
+	url = https://github.com/aperezdc/vim-template

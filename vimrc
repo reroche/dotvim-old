@@ -61,10 +61,10 @@ hi SpellBad cterm=underline ctermfg=red
 autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "--------------- Key Mapping -----------------------
+let mapleader=','
 vnoremap jk <esc>
 inoremap jk <esc>
 nnoremap fd :w!<CR>
-let mapleader=','
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>q :q<CR>
 nnoremap U <C-r>
@@ -105,6 +105,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
+let g:syntastic_cpp_checkers=['gcc']
 "
 "-------------- vim-airline ------------------
 " Always show statusbar

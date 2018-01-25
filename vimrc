@@ -1,7 +1,13 @@
 "------------------ RER's vimrc ---------------------
 
+" My Info
 let g:username = "RE Roche"
 let g:email = "rers97@gmail.com"
+
+" Customize cursor
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " Pathogen Configuration
 execute pathogen#infect()
@@ -106,7 +112,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_cpp_checkers=['gcc']
-"
+
 "-------------- vim-airline ------------------
 " Always show statusbar
 set laststatus=2

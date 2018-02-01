@@ -58,3 +58,9 @@
 [submodule "bundle/vim-rmarkdown"]
 	path = bundle/vim-rmarkdown
 	url = https://github.com/vim-pandoc/vim-rmarkdown
+[submodule "bundle/zeavim.vim"]
+	path = bundle/zeavim.vim
+	url = https://github.com/KabbAmine/zeavim.vim
+[submodule "bundle/Nvim-R"]
+	path = bundle/Nvim-R
+	url = https://github.com/jalvesaq/Nvim-R
